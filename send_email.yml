@@ -23,7 +23,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.gqikdubrjntorldfieo36@gmail.com }}
-          password: ${{ secrets.send_email.yml }}
+          password: ${{ secrets.tgnv ubhx lsxs dyal }}
           subject: "رسالة جديدة من {{ github.event.inputs.name }}"
           body: |
             الاسم: {{ github.event.inputs.name }}
