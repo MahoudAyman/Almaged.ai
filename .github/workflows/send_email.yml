@@ -1,0 +1,37 @@
+name: Send Email
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'اسم المرسل'
+        required: true
+        phone:
+       description: 'رقم الهاتف'
+       required: true
+      email:
+        description: 'بريد المرسل'
+        required: true
+      message:
+        description: 'نص الرسالة'
+        required: true
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.gqikdubrjntorldfieo36@gmail.com }}
+          password: ${{ secrets.tgnv ubhx lsxs dyal }}
+          subject: "رسالة جديدة من {{ github.event.inputs.name }}"
+          body: |
+            الاسم: {{ github.event.inputs.name }}
+            رقم الهاتف: {{ github.event.inputs.phone }}
+            البريد: {{ github.event.inputs.email }}
+            الرسالة: {{ github.event.inputs.message }}
+          to: gqikdubrjntorldfieo36@gmail.com
+          from: ${{ secrets.gqikdubrjntorldfieo36@gmail.com }}
