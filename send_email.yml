@@ -6,6 +6,9 @@ on:
       name:
         description: 'اسم المرسل'
         required: true
+        phone:
+       description: 'رقم الهاتف'
+       required: true
       email:
         description: 'بريد المرسل'
         required: true
@@ -27,6 +30,7 @@ jobs:
           subject: "رسالة جديدة من {{ github.event.inputs.name }}"
           body: |
             الاسم: {{ github.event.inputs.name }}
+            رقم الهاتف: {{ github.event.inputs.phone }}
             البريد: {{ github.event.inputs.email }}
             الرسالة: {{ github.event.inputs.message }}
           to: gqikdubrjntorldfieo36@gmail.com
