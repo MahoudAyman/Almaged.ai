@@ -22,12 +22,12 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.EMAIL_USER }}
-          password: ${{ secrets.EMAIL_PASS }}
+          username: ${{ secrets.gqikdubrjntorldfieo36@gmail.com }}
+          password: ${{ secrets.send_email.yml }}
           subject: "رسالة جديدة من {{ github.event.inputs.name }}"
           body: |
             الاسم: {{ github.event.inputs.name }}
             البريد: {{ github.event.inputs.email }}
             الرسالة: {{ github.event.inputs.message }}
           to: gqikdubrjntorldfieo36@gmail.com
-          from: ${{ secrets.EMAIL_USER }}
+          from: ${{ secrets.gqikdubrjntorldfieo36@gmail.com }}
